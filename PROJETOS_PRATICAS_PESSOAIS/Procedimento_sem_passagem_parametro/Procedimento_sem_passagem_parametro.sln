@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Procedimento_sem_passagem_parametro", "Procedimento_sem_passagem_parametro\Procedimento_sem_passagem_parametro.csproj", "{D636706C-78A1-4640-B433-626F03F81890}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D636706C-78A1-4640-B433-626F03F81890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D636706C-78A1-4640-B433-626F03F81890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D636706C-78A1-4640-B433-626F03F81890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D636706C-78A1-4640-B433-626F03F81890}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4DD23A74-027D-429C-A983-8A912157605D}
+	EndGlobalSection
+EndGlobal

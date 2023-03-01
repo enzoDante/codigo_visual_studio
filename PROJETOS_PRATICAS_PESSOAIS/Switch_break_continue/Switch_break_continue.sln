@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Switch_break_continue", "Switch_break_continue\Switch_break_continue.csproj", "{B87CD60F-5276-4BC9-A7A6-150590B79D12}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B87CD60F-5276-4BC9-A7A6-150590B79D12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B87CD60F-5276-4BC9-A7A6-150590B79D12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B87CD60F-5276-4BC9-A7A6-150590B79D12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B87CD60F-5276-4BC9-A7A6-150590B79D12}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {24F5A7D3-117D-42B1-9818-43BF2EDC4E55}
+	EndGlobalSection
+EndGlobal

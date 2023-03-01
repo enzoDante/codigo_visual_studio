@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "parametros_mais", "parametros_mais\parametros_mais.csproj", "{73A56D79-ABC4-4CB3-A176-C698A03E01DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73A56D79-ABC4-4CB3-A176-C698A03E01DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73A56D79-ABC4-4CB3-A176-C698A03E01DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73A56D79-ABC4-4CB3-A176-C698A03E01DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73A56D79-ABC4-4CB3-A176-C698A03E01DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {04D142A1-2CE8-4957-A278-77F7DAFB40B3}
+	EndGlobalSection
+EndGlobal
