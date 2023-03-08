@@ -29,24 +29,40 @@ namespace teste_fazer_ponto_na_tela
             Pen caneta = new Pen(cor, 0);
             return caneta;
         }
+        public void PrintLinha(PaintEventArgs e, int x0, int y0, int x1, int y1, Pen caneta)
+        {
+            int dx = x1 - x0;
+            int dy = y1 - y0;
+            int x = x0;
+            int y = y0;
+            int s = 0;
+
+            if (dx > dy)
+                s = dx;
+            else
+                s = dy;
+            x1 = dx / s;
+            y1 = dy / s;
+
+            PrintPont(e, x, y, caneta);
+            for(int i = 0; i <= s; i++)
+            {
+                x += x1;
+                y += y1;
+                PrintPont(e, x, y, caneta);
+            }
+        }
 
         public void PrintPont(PaintEventArgs e, int x, int y, Pen c)
         {
             e.Graphics.DrawLine(c, x, y, x + 1, y);
         }
-        public void linha(PaintEventArgs e, int x, int y, Pen c)
-        {
-            for(int i = 1; i <= 100; i++)
-            {
-                PrintPont(e, x + i, y, c);
-            }
-        }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             Pen c = SetCor(255, 0, 0);
-            PrintPont(e, 200, 100, c);
-            //linha(e, 100, 100, c);
+            PrintLinha(e, 100, 200, 300, 400, c);
+            //PrintPont(e, 200, 100, c);
         }
     }
 }
