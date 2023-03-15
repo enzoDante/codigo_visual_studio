@@ -26,11 +26,20 @@ namespace ProjetoCG1Bi
         {
             InitializeComponent();
         }
-        PaintEventArgs e1;
+        Boolean apertouBtn = false;
+        int x = 0, y= 0, x1 = 0, m = 0, b = 0;
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            e1 = e;
+            Pen preto = SetCor(0, 0, 0);
+            e.Graphics.DrawLine(preto, 900, 0, 900, 1600);
+            e.Graphics.DrawLine(preto, 0, 600, 2000, 600);
+            //PrintLinha(e, x, y, c);
+            if (apertouBtn)
+            {
+                Pen c = SetCor(255, 0, 0);
+                e.Graphics.DrawLine(c, 900+x, 600-y, 900+x1, ((x1*m)+b)-600 );
+            }
         }
         public Pen SetCor(int r, int g, int b)
         {
@@ -39,19 +48,18 @@ namespace ProjetoCG1Bi
             return caneta;
         }
 
-        public void PrintPont(PaintEventArgs e, int x, int y, Pen c)
-        {
-            e1.Graphics.DrawLine(c, x, y, x + 1, y);
-        }
-
-
-
         private void button1_Click(object sender, EventArgs e)
         {
-            int x = int.Parse(textBox1.Text);
-            int y = int.Parse(textBox2.Text);
-            Pen c = SetCor(255, 0, 0);
-            PrintPont(e1, x, y, c);
+            x = int.Parse(textBox1.Text);
+            y = int.Parse(textBox2.Text);
+            x1 = int.Parse(textBox3.Text);
+            m = int.Parse(textBox4.Text);
+            b = int.Parse(textBox5.Text);
+
+            apertouBtn = true;
+            Invalidate();
+            //Pen c = SetCor(255, 0, 0);
+            //PrintPont(e, x, y, c);
         }
     }
 }
