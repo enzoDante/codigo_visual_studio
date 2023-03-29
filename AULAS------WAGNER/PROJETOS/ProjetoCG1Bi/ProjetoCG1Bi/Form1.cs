@@ -32,13 +32,13 @@ namespace ProjetoCG1Bi
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             Pen preto = SetCor(0, 0, 0);
-            e.Graphics.DrawLine(preto, 900, 0, 900, 1600);
-            e.Graphics.DrawLine(preto, 0, 600, 2000, 600);
+            e.Graphics.DrawLine(preto, 800, 0, 800, 1600); //900
+            e.Graphics.DrawLine(preto, 0, 500, 2000, 500);
             //PrintLinha(e, x, y, c);
             if (apertouBtn)
             {
                 Pen c = SetCor(255, 0, 0);
-                e.Graphics.DrawLine(c, 900+x, 600-y, 900+x1, ((x1*m)+b)-600 );
+                e.Graphics.DrawLine(c, 800+x, 500-y, 800+x1, 500-((x1*m)+b) );
             }
         }
         public Pen SetCor(int r, int g, int b)
