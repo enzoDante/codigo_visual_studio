@@ -29,7 +29,7 @@ namespace ex5
         public Pen setCor(int r, int g, int b)
         {
             Color cor = Color.FromArgb(r, g, b);
-            Pen caneta = new Pen(cor, 500);
+            Pen caneta = new Pen(cor, 3);
             return caneta;
         }
 
