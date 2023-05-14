@@ -157,6 +157,7 @@ namespace Projeto2bi_3ano
             this.button8.Size = new System.Drawing.Size(23, 21);
             this.button8.TabIndex = 8;
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
@@ -166,6 +167,7 @@ namespace Projeto2bi_3ano
             this.button9.Size = new System.Drawing.Size(23, 21);
             this.button9.TabIndex = 9;
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
@@ -175,6 +177,7 @@ namespace Projeto2bi_3ano
             this.button10.Size = new System.Drawing.Size(23, 21);
             this.button10.TabIndex = 10;
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button11
             // 
@@ -184,6 +187,7 @@ namespace Projeto2bi_3ano
             this.button11.Size = new System.Drawing.Size(23, 21);
             this.button11.TabIndex = 11;
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button12
             // 
@@ -193,6 +197,7 @@ namespace Projeto2bi_3ano
             this.button12.Size = new System.Drawing.Size(23, 21);
             this.button12.TabIndex = 12;
             this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button13
             // 
@@ -202,6 +207,7 @@ namespace Projeto2bi_3ano
             this.button13.Size = new System.Drawing.Size(23, 21);
             this.button13.TabIndex = 13;
             this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // button14
             // 
@@ -211,6 +217,7 @@ namespace Projeto2bi_3ano
             this.button14.Size = new System.Drawing.Size(23, 21);
             this.button14.TabIndex = 14;
             this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button15
             // 
@@ -220,6 +227,7 @@ namespace Projeto2bi_3ano
             this.button15.Size = new System.Drawing.Size(23, 21);
             this.button15.TabIndex = 15;
             this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // button16
             // 
@@ -229,6 +237,7 @@ namespace Projeto2bi_3ano
             this.button16.Size = new System.Drawing.Size(23, 21);
             this.button16.TabIndex = 16;
             this.button16.UseVisualStyleBackColor = false;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // button17
             // 
@@ -238,6 +247,7 @@ namespace Projeto2bi_3ano
             this.button17.Size = new System.Drawing.Size(23, 21);
             this.button17.TabIndex = 17;
             this.button17.UseVisualStyleBackColor = false;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // button18
             // 
@@ -247,6 +257,7 @@ namespace Projeto2bi_3ano
             this.button18.Size = new System.Drawing.Size(23, 21);
             this.button18.TabIndex = 18;
             this.button18.UseVisualStyleBackColor = false;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // button19
             // 
@@ -256,6 +267,7 @@ namespace Projeto2bi_3ano
             this.button19.Size = new System.Drawing.Size(23, 21);
             this.button19.TabIndex = 19;
             this.button19.UseVisualStyleBackColor = false;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // button20
             // 
@@ -265,6 +277,7 @@ namespace Projeto2bi_3ano
             this.button20.Size = new System.Drawing.Size(23, 21);
             this.button20.TabIndex = 20;
             this.button20.UseVisualStyleBackColor = false;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // button21
             // 
@@ -274,6 +287,7 @@ namespace Projeto2bi_3ano
             this.button21.Size = new System.Drawing.Size(23, 21);
             this.button21.TabIndex = 21;
             this.button21.UseVisualStyleBackColor = false;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
             // 
             // button22
             // 
@@ -283,6 +297,7 @@ namespace Projeto2bi_3ano
             this.button22.Size = new System.Drawing.Size(23, 21);
             this.button22.TabIndex = 22;
             this.button22.UseVisualStyleBackColor = false;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
             // button23
             // 
@@ -292,6 +307,7 @@ namespace Projeto2bi_3ano
             this.button23.Size = new System.Drawing.Size(23, 21);
             this.button23.TabIndex = 23;
             this.button23.UseVisualStyleBackColor = false;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // button24
             // 
@@ -301,6 +317,7 @@ namespace Projeto2bi_3ano
             this.button24.Size = new System.Drawing.Size(23, 21);
             this.button24.TabIndex = 24;
             this.button24.UseVisualStyleBackColor = false;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
             // button25
             // 
@@ -310,6 +327,7 @@ namespace Projeto2bi_3ano
             this.button25.Size = new System.Drawing.Size(23, 21);
             this.button25.TabIndex = 25;
             this.button25.UseVisualStyleBackColor = false;
+            this.button25.Click += new System.EventHandler(this.button25_Click);
             // 
             // button26
             // 
@@ -319,6 +337,7 @@ namespace Projeto2bi_3ano
             this.button26.Size = new System.Drawing.Size(23, 21);
             this.button26.TabIndex = 26;
             this.button26.UseVisualStyleBackColor = false;
+            this.button26.Click += new System.EventHandler(this.button26_Click);
             // 
             // button27
             // 

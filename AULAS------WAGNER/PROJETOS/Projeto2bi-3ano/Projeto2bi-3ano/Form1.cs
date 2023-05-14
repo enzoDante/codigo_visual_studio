@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Projeto2bi_3ano
 {
@@ -17,8 +18,10 @@ namespace Projeto2bi_3ano
             InitializeComponent();
         }
         Boolean pintar = false, segundoClique = false, marcarCoordenada = false;
+        int todosPontosCoordenadasCont = 0;
         int[,] coordenadas;
         int[] coordenadasAtuais = new int[10]; //{ 0, 0, 0, 0 }
+        int[,] configDesenha = new int[3,3];
         int espessura = 1, tipoForma = 0, ContcoordenadasC = 0, pontosClicados = 0;
         Color cor = Color.FromArgb(0, 0, 0);
         Pen caneta = new Pen(Color.Black, 1);
@@ -117,6 +120,23 @@ namespace Projeto2bi_3ano
             return 0;
         }
 
+        //salvar todos os pontos, cores, etc
+        public void SaveArquivo()
+        {
+            File.AppendAllText(@"D:\codigo_visual_studio\AULAS------WAGNER\PROJETOS\arquivos\hm2.txt", caneta + Environment.NewLine);
+            /*int i = 0;
+            for(int l = 0; l <= 2+GetTipo(); l++)
+            {
+                if(i >= 0 && i <= 2)
+                {
+                    coordenadas[todosPontosCoordenadasCont, l] = configDesenha[i, 0];
+                }
+                coordenadas[todosPontosCoordenadasCont, l] = coordenadasAtuais[l];
+            }
+            
+            todosPontosCoordenadasCont++;*/
+        }
+
         //linha
         private void button1_Click(object sender, EventArgs e)
         {
@@ -147,12 +167,14 @@ namespace Projeto2bi_3ano
             tipoForma = 5;
             marcarCoordenada = true;
         }
+
         //losango
         private void button5_Click(object sender, EventArgs e)
         {
             tipoForma = 6;
             marcarCoordenada = true;
-        }
+        } 
+
         //pentagono
         private void button6_Click(object sender, EventArgs e)
         {
@@ -165,9 +187,115 @@ namespace Projeto2bi_3ano
         private void button7_Click(object sender, EventArgs e)
         {
             cor = setCor(0, 0, 0);
+            caneta = setPen(cor, espessura);
             MessageBox.Show("preto");
         }
+        //cinza
+        private void button9_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("cinza");
+            cor = setCor(190, 190, 190);
+            caneta = setPen(cor, espessura);
+        }
+        // vermelho escuro
+        private void button11_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("dark red");
+        }
+        //vermelho
+        private void button12_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("red");
+            cor = setCor(255, 0, 0);
+            caneta = setPen(cor, espessura);
+        }
+        //laranja
+        private void button13_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("laranja");
+            cor = setCor(255, 165, 0);
+            caneta = setPen(cor, espessura);
+        }
+        //amarelo
+        private void button14_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("marelo");
+        }
+        //verde escuro
+        private void button15_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("verde escuro");
+        }
+        //branco
+        private void button8_Click(object sender, EventArgs e)
+        {
 
+        }
+        //cinza escuro
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+        }
+        //marrom
+        private void button19_Click(object sender, EventArgs e)
+        {
+            cor = setCor(165, 42, 42);
+            caneta = setPen(cor, espessura);
+        }
+        //rosa
+        private void button20_Click(object sender, EventArgs e)
+        {
+            cor = setCor(255, 192, 203);
+            caneta = setPen(cor, espessura);
+        }
+        //dourado
+        private void button21_Click(object sender, EventArgs e)
+        {
+
+        }
+        //amarelo claro
+        private void button22_Click(object sender, EventArgs e)
+        {
+
+        }
+        //verde lima
+        private void button23_Click(object sender, EventArgs e)
+        {
+
+        }
+        //turquoise
+        private void button24_Click(object sender, EventArgs e)
+        {
+
+        }
+        //slate gray
+        private void button25_Click(object sender, EventArgs e)
+        {
+
+        }
+        //Thistle
+        private void button26_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //azul
+        private void button16_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("azul");
+            cor = setCor(0, 0, 255);
+            caneta = setPen(cor, espessura);
+        }
+        //azul escuro
+        private void button17_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("azul escuro");
+        }
+        //roxo
+        private void button18_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("roxo");
+        }
 
         //mouse pontos clicados
         private void Form1_MouseClick(object sender, MouseEventArgs e)
@@ -226,6 +354,7 @@ namespace Projeto2bi_3ano
                         PrintPentagono(e, coordenadasAtuais, caneta);
                         break;
                 }
+                //SaveArquivo();
                 pintar = false;
                 segundoClique = false;
                 ContcoordenadasC = 0;
