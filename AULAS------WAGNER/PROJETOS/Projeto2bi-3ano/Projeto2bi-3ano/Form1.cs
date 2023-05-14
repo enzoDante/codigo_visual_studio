@@ -23,6 +23,7 @@ namespace Projeto2bi_3ano
         int[] coordenadasAtuais = new int[10]; //{ 0, 0, 0, 0 }
         int[,] configDesenha = new int[3,3];
         float[] flinha = new float[1] { 1 };
+        float raio = 0, larg = 0, alt = 0;
         int espessura = 1, tipoForma = 0, ContcoordenadasC = 0, pontosClicados = 0;
         Color cor = Color.FromArgb(0, 0, 0);
         Pen caneta = new Pen(Color.Black, 1);
@@ -43,15 +44,41 @@ namespace Projeto2bi_3ano
         public void PrintElipse(PaintEventArgs e, int[] x, Pen c)
         {
             //, int y, int larg, int alt
-            e.Graphics.DrawEllipse(c, x[0], x[1], x[2], x[3]);
+            if(tipoForma == 2)
+            {
+                raio = float.Parse(textBox1.Text);
+                e.Graphics.DrawEllipse(c, x[0], x[1], raio, raio);
+            }                
+            else
+            {
+                larg = float.Parse(textBox3.Text);
+                alt = float.Parse(textBox2.Text);
+                e.Graphics.DrawEllipse(c, x[0], x[1], larg, alt);
+            }
+            
         }
         public void PrintRetangulo(PaintEventArgs e, int[] x, Pen c)
         {
-            e.Graphics.DrawRectangle(c, x[0], x[1], x[2], x[3]);
+            //e.Graphics.DrawRectangle(c, x[0], x[1], x[2], x[3]);
+            /*int aux = 0, aux2 = 2;
+            for (int i = 0; i <= 3; i++)
+            {
+                PrintLinha(e, x[aux], x[aux + 1], x[aux2], x[aux + 1], c);
+                aux += 2;
+                aux2 += 2;
+                if (aux2 == 4)
+                {
+                    aux2 = 0;
+                }                    
+            }*/
+            PrintLinha(e, x[0], x[1], x[0], x[3], c);
+            PrintLinha(e, x[0], x[1], x[2], x[1], c);
+
+            PrintLinha(e, x[2], x[3], x[0], x[3], c);
+            PrintLinha(e, x[2], x[3], x[2], x[1], c);
         }
         public void PrintTriangulo(PaintEventArgs e, int[] x, Pen c)
         {
-            //, int y, int x1, int y1, int x2, int y2
             // 0 1   2   3 |  2 3   4   5 |  0 1  4  5
             int aux = 0, aux2 = 2;
             for(int i = 0; i <= 2; i++)
@@ -62,9 +89,6 @@ namespace Projeto2bi_3ano
                 if (aux2 == 6)
                     aux2 = 0;
             }
-            //PrintLinha(e, x[0], x[1], x[2], x[3], c);
-            //PrintLinha(e, x[2], x[3], x[4], x[5], c);
-            //PrintLinha(e, x[0], x[1], x[4], x[5], c);
         }
         public void PrintPentagono(PaintEventArgs e, int[] pontos, Pen c)
         {
@@ -338,7 +362,15 @@ namespace Projeto2bi_3ano
             caneta = setPen(cor, espessura);
             caneta.DashPattern = flinha;
         }
-
+        //verificar total de cliques
+        public void validarInvalidate()
+        {
+            if (pontosClicados == GetTipo())
+            {
+                pintar = true;
+                Invalidate();
+            }
+        }
         //mouse pontos clicados
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
@@ -348,6 +380,8 @@ namespace Projeto2bi_3ano
                 coordenadasAtuais[1] = e.Y;
                 ContcoordenadasC = 2;
                 pontosClicados++;
+
+                validarInvalidate();
                 segundoClique = true;
                 //MessageBox.Show(coordenadasAtuais[0].ToString());
             }
@@ -356,12 +390,7 @@ namespace Projeto2bi_3ano
                 pontosClicados++;
                 coordenadasAtuais[ContcoordenadasC] = e.X;
                 coordenadasAtuais[ContcoordenadasC+1] = e.Y;
-
-                if (pontosClicados == GetTipo())
-                {
-                    pintar = true;
-                    Invalidate();
-                }
+                validarInvalidate();
                 ContcoordenadasC += 2;                
             }
         }
