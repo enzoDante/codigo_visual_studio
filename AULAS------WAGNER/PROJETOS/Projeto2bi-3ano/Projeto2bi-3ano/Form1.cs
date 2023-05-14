@@ -22,6 +22,7 @@ namespace Projeto2bi_3ano
         int[,] coordenadas;
         int[] coordenadasAtuais = new int[10]; //{ 0, 0, 0, 0 }
         int[,] configDesenha = new int[3,3];
+        float[] flinha = new float[1] { 1 };
         int espessura = 1, tipoForma = 0, ContcoordenadasC = 0, pontosClicados = 0;
         Color cor = Color.FromArgb(0, 0, 0);
         Pen caneta = new Pen(Color.Black, 1);
@@ -188,53 +189,54 @@ namespace Projeto2bi_3ano
         {
             cor = setCor(0, 0, 0);
             caneta = setPen(cor, espessura);
-            MessageBox.Show("preto");
         }
         //cinza
         private void button9_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("cinza");
             cor = setCor(190, 190, 190);
             caneta = setPen(cor, espessura);
         }
         // vermelho escuro
         private void button11_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("dark red");
+            cor = setCor(139, 0, 0);
+            caneta = setPen(cor, espessura);
         }
         //vermelho
         private void button12_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("red");
             cor = setCor(255, 0, 0);
             caneta = setPen(cor, espessura);
         }
         //laranja
         private void button13_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("laranja");
             cor = setCor(255, 165, 0);
             caneta = setPen(cor, espessura);
         }
         //amarelo
         private void button14_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("marelo");
+            cor = setCor(255, 255, 0);
+            caneta = setPen(cor, espessura);
         }
         //verde escuro
         private void button15_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("verde escuro");
+            cor = setCor(0, 100, 0);
+            caneta = setPen(cor, espessura);
         }
         //branco
         private void button8_Click(object sender, EventArgs e)
         {
-
+            cor = setCor(255, 255, 255);
+            caneta = setPen(cor, espessura);
         }
         //cinza escuro
         private void button10_Click(object sender, EventArgs e)
         {
-
+            cor = setCor(128, 128, 128);
+            caneta = setPen(cor, espessura);
         }
         //marrom
         private void button19_Click(object sender, EventArgs e)
@@ -251,50 +253,90 @@ namespace Projeto2bi_3ano
         //dourado
         private void button21_Click(object sender, EventArgs e)
         {
-
+            cor = setCor(207, 181, 59);
+            caneta = setPen(cor, espessura);
         }
         //amarelo claro
         private void button22_Click(object sender, EventArgs e)
         {
-
+            cor = setCor(255, 255, 224);
+            caneta = setPen(cor, espessura);
         }
         //verde lima
         private void button23_Click(object sender, EventArgs e)
         {
-
+            cor = setCor(50, 205, 50);
+            caneta = setPen(cor, espessura);
         }
         //turquoise
         private void button24_Click(object sender, EventArgs e)
         {
-
+            cor = setCor(64, 224, 208);
+            caneta = setPen(cor, espessura);
         }
         //slate gray
         private void button25_Click(object sender, EventArgs e)
         {
-
+            cor = setCor(112, 128, 144);
+            caneta = setPen(cor, espessura);
         }
         //Thistle
         private void button26_Click(object sender, EventArgs e)
         {
-
+            cor = setCor(216, 191, 216);
+            caneta = setPen(cor, espessura);
         }
-
         //azul
         private void button16_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("azul");
             cor = setCor(0, 0, 255);
             caneta = setPen(cor, espessura);
         }
         //azul escuro
         private void button17_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("azul escuro");
+            cor = setCor(0, 0, 139);
+            caneta = setPen(cor, espessura);
         }
         //roxo
         private void button18_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("roxo");
+            cor = setCor(153, 51, 153);
+            caneta = setPen(cor, espessura);
+        }
+        //========================================================
+        //combo box tipos de linha
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            int valorCombo = int.Parse(comboBox2.SelectedItem.ToString());
+            switch (valorCombo)
+            {
+                case 1:
+                    flinha = new float[1] { 1};
+                    break;
+                case 2:
+                    flinha = new float[2] { 5, 2 };
+                    break;
+                case 3:
+                    flinha = new float[2] { 1, 2 };
+                    break;
+                case 4:
+                    flinha = new float[4] { 5, 2, 1, 2 };
+                    break;
+                case 5:
+                    flinha = new float[6] { 5, 2, 1, 2, 1, 2 };
+                    break;
+            }
+            caneta.DashPattern = flinha;
+        }
+        //combo box espessura
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int valorCombo = int.Parse(comboBox1.SelectedItem.ToString());
+            espessura = valorCombo * 2;
+            caneta = setPen(cor, espessura);
+            caneta.DashPattern = flinha;
         }
 
         //mouse pontos clicados

@@ -63,6 +63,9 @@ namespace Projeto2bi_3ano
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // button1
@@ -101,7 +104,7 @@ namespace Projeto2bi_3ano
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(34, 21);
             this.button4.TabIndex = 3;
-            this.button4.Text = "/\\";
+            this.button4.Text = "🔺";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -127,6 +130,7 @@ namespace Projeto2bi_3ano
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "1",
@@ -134,15 +138,16 @@ namespace Projeto2bi_3ano
             "3",
             "4",
             "5"});
-            this.comboBox1.Location = new System.Drawing.Point(304, 0);
+            this.comboBox1.Location = new System.Drawing.Point(449, 22);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(49, 21);
             this.comboBox1.TabIndex = 6;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.Black;
-            this.button7.Location = new System.Drawing.Point(377, 1);
+            this.button7.Location = new System.Drawing.Point(504, 1);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(23, 21);
             this.button7.TabIndex = 7;
@@ -152,7 +157,7 @@ namespace Projeto2bi_3ano
             // button8
             // 
             this.button8.BackColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(377, 28);
+            this.button8.Location = new System.Drawing.Point(504, 28);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(23, 21);
             this.button8.TabIndex = 8;
@@ -162,7 +167,7 @@ namespace Projeto2bi_3ano
             // button9
             // 
             this.button9.BackColor = System.Drawing.Color.Gray;
-            this.button9.Location = new System.Drawing.Point(406, 1);
+            this.button9.Location = new System.Drawing.Point(533, 1);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(23, 21);
             this.button9.TabIndex = 9;
@@ -172,7 +177,7 @@ namespace Projeto2bi_3ano
             // button10
             // 
             this.button10.BackColor = System.Drawing.Color.DarkGray;
-            this.button10.Location = new System.Drawing.Point(406, 28);
+            this.button10.Location = new System.Drawing.Point(533, 28);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(23, 21);
             this.button10.TabIndex = 10;
@@ -182,7 +187,7 @@ namespace Projeto2bi_3ano
             // button11
             // 
             this.button11.BackColor = System.Drawing.Color.DarkRed;
-            this.button11.Location = new System.Drawing.Point(435, 0);
+            this.button11.Location = new System.Drawing.Point(562, 0);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(23, 21);
             this.button11.TabIndex = 11;
@@ -192,7 +197,7 @@ namespace Projeto2bi_3ano
             // button12
             // 
             this.button12.BackColor = System.Drawing.Color.Red;
-            this.button12.Location = new System.Drawing.Point(464, 0);
+            this.button12.Location = new System.Drawing.Point(591, 0);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(23, 21);
             this.button12.TabIndex = 12;
@@ -202,7 +207,7 @@ namespace Projeto2bi_3ano
             // button13
             // 
             this.button13.BackColor = System.Drawing.Color.Orange;
-            this.button13.Location = new System.Drawing.Point(493, 0);
+            this.button13.Location = new System.Drawing.Point(620, 0);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(23, 21);
             this.button13.TabIndex = 13;
@@ -212,7 +217,7 @@ namespace Projeto2bi_3ano
             // button14
             // 
             this.button14.BackColor = System.Drawing.Color.Yellow;
-            this.button14.Location = new System.Drawing.Point(522, 1);
+            this.button14.Location = new System.Drawing.Point(649, 1);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(23, 21);
             this.button14.TabIndex = 14;
@@ -222,7 +227,7 @@ namespace Projeto2bi_3ano
             // button15
             // 
             this.button15.BackColor = System.Drawing.Color.DarkGreen;
-            this.button15.Location = new System.Drawing.Point(551, 1);
+            this.button15.Location = new System.Drawing.Point(678, 1);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(23, 21);
             this.button15.TabIndex = 15;
@@ -232,7 +237,7 @@ namespace Projeto2bi_3ano
             // button16
             // 
             this.button16.BackColor = System.Drawing.Color.Blue;
-            this.button16.Location = new System.Drawing.Point(580, 1);
+            this.button16.Location = new System.Drawing.Point(707, 1);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(23, 21);
             this.button16.TabIndex = 16;
@@ -242,7 +247,7 @@ namespace Projeto2bi_3ano
             // button17
             // 
             this.button17.BackColor = System.Drawing.Color.DarkBlue;
-            this.button17.Location = new System.Drawing.Point(609, 1);
+            this.button17.Location = new System.Drawing.Point(736, 1);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(23, 21);
             this.button17.TabIndex = 17;
@@ -252,7 +257,7 @@ namespace Projeto2bi_3ano
             // button18
             // 
             this.button18.BackColor = System.Drawing.Color.Purple;
-            this.button18.Location = new System.Drawing.Point(638, 1);
+            this.button18.Location = new System.Drawing.Point(765, 1);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(23, 21);
             this.button18.TabIndex = 18;
@@ -262,7 +267,7 @@ namespace Projeto2bi_3ano
             // button19
             // 
             this.button19.BackColor = System.Drawing.Color.Brown;
-            this.button19.Location = new System.Drawing.Point(435, 28);
+            this.button19.Location = new System.Drawing.Point(562, 28);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(23, 21);
             this.button19.TabIndex = 19;
@@ -272,7 +277,7 @@ namespace Projeto2bi_3ano
             // button20
             // 
             this.button20.BackColor = System.Drawing.Color.Pink;
-            this.button20.Location = new System.Drawing.Point(464, 28);
+            this.button20.Location = new System.Drawing.Point(591, 28);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(23, 21);
             this.button20.TabIndex = 20;
@@ -282,7 +287,7 @@ namespace Projeto2bi_3ano
             // button21
             // 
             this.button21.BackColor = System.Drawing.Color.Gold;
-            this.button21.Location = new System.Drawing.Point(493, 28);
+            this.button21.Location = new System.Drawing.Point(620, 28);
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(23, 21);
             this.button21.TabIndex = 21;
@@ -292,7 +297,7 @@ namespace Projeto2bi_3ano
             // button22
             // 
             this.button22.BackColor = System.Drawing.Color.LightYellow;
-            this.button22.Location = new System.Drawing.Point(522, 28);
+            this.button22.Location = new System.Drawing.Point(649, 28);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(23, 21);
             this.button22.TabIndex = 22;
@@ -302,7 +307,7 @@ namespace Projeto2bi_3ano
             // button23
             // 
             this.button23.BackColor = System.Drawing.Color.LimeGreen;
-            this.button23.Location = new System.Drawing.Point(551, 28);
+            this.button23.Location = new System.Drawing.Point(678, 28);
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(23, 21);
             this.button23.TabIndex = 23;
@@ -312,7 +317,7 @@ namespace Projeto2bi_3ano
             // button24
             // 
             this.button24.BackColor = System.Drawing.Color.Turquoise;
-            this.button24.Location = new System.Drawing.Point(580, 28);
+            this.button24.Location = new System.Drawing.Point(707, 28);
             this.button24.Name = "button24";
             this.button24.Size = new System.Drawing.Size(23, 21);
             this.button24.TabIndex = 24;
@@ -322,7 +327,7 @@ namespace Projeto2bi_3ano
             // button25
             // 
             this.button25.BackColor = System.Drawing.Color.SlateGray;
-            this.button25.Location = new System.Drawing.Point(609, 28);
+            this.button25.Location = new System.Drawing.Point(736, 28);
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(23, 21);
             this.button25.TabIndex = 25;
@@ -332,7 +337,7 @@ namespace Projeto2bi_3ano
             // button26
             // 
             this.button26.BackColor = System.Drawing.Color.Thistle;
-            this.button26.Location = new System.Drawing.Point(638, 28);
+            this.button26.Location = new System.Drawing.Point(765, 28);
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(23, 21);
             this.button26.TabIndex = 26;
@@ -397,11 +402,48 @@ namespace Projeto2bi_3ano
             this.label3.TabIndex = 33;
             this.label3.Text = "largura";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(446, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "espessura";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(365, 5);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 13);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "tipo de linha";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.comboBox2.Location = new System.Drawing.Point(368, 22);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(49, 21);
+            this.comboBox2.TabIndex = 36;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox3);
@@ -481,6 +523,9 @@ namespace Projeto2bi_3ano
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }
 
