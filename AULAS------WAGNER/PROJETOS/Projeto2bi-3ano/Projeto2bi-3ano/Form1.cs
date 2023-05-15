@@ -17,14 +17,15 @@ namespace Projeto2bi_3ano
         {
             InitializeComponent();
         }
-        Boolean pintar = false, segundoClique = false, marcarCoordenada = false;
+        Boolean pintar = false, segundoClique = false, marcarCoordenada = false, desenhosIniciais = true;
         int todosPontosCoordenadasCont = 0;
         int[,] coordenadas;
         int[] coordenadasAtuais = new int[10]; //{ 0, 0, 0, 0 }
-        int[,] configDesenha = new int[3,3];
+        int[,] configDesenha = new int[3, 3];
         float[] flinha = new float[1] { 1 };
         float raio = 0, larg = 0, alt = 0;
         int espessura = 1, tipoForma = 0, ContcoordenadasC = 0, pontosClicados = 0;
+        String corLinha = "0 0 0", tipoFLinha = "1";
         Color cor = Color.FromArgb(0, 0, 0);
         Pen caneta = new Pen(Color.Black, 1);
 
@@ -148,18 +149,21 @@ namespace Projeto2bi_3ano
         //salvar todos os pontos, cores, etc
         public void SaveArquivo()
         {
-            File.AppendAllText(@"D:\codigo_visual_studio\AULAS------WAGNER\PROJETOS\arquivos\hm2.txt", caneta + Environment.NewLine);
-            /*int i = 0;
-            for(int l = 0; l <= 2+GetTipo(); l++)
+            //D:\codigo_visual_studio\AULAS------WAGNER\PROJETOS\arquivos\hm2.txt
+            //D:\codigo_visual_studio\AULAS------WAGNER\TESTES\ARQUIVOS
+            //C:\Users\aluno\Documents\texto.txt
+            File.AppendAllText(@"D:\codigo_visual_studio\AULAS------WAGNER\TESTES\ARQUIVOS\texto.txt", corLinha + " " + espessura + " " + tipoFLinha + " " + tipoForma + " ");
+
+            for (int i = 0; i <= GetTipo() * 2 - 1; i++)
             {
-                if(i >= 0 && i <= 2)
-                {
-                    coordenadas[todosPontosCoordenadasCont, l] = configDesenha[i, 0];
-                }
-                coordenadas[todosPontosCoordenadasCont, l] = coordenadasAtuais[l];
+                File.AppendAllText(@"D:\codigo_visual_studio\AULAS------WAGNER\TESTES\ARQUIVOS\texto.txt", coordenadasAtuais[i] + " ");
             }
-            
-            todosPontosCoordenadasCont++;*/
+            if (tipoForma == 2)
+                File.AppendAllText(@"D:\codigo_visual_studio\AULAS------WAGNER\TESTES\ARQUIVOS\texto.txt", raio + " ");
+            else if (tipoForma == 3)
+                File.AppendAllText(@"D:\codigo_visual_studio\AULAS------WAGNER\TESTES\ARQUIVOS\texto.txt", larg + " " + alt + " ");
+            File.AppendAllText(@"D:\codigo_visual_studio\AULAS------WAGNER\TESTES\ARQUIVOS\texto.txt", "" + Environment.NewLine);
+
         }
 
         //linha
@@ -212,147 +216,195 @@ namespace Projeto2bi_3ano
         private void button7_Click(object sender, EventArgs e)
         {
             cor = setCor(0, 0, 0);
+            corLinha = "0 0 0";
             caneta = setPen(cor, espessura);
+            caneta.DashPattern = flinha;
         }
         //cinza
         private void button9_Click(object sender, EventArgs e)
         {
             cor = setCor(190, 190, 190);
+            corLinha = "190 190 190";
             caneta = setPen(cor, espessura);
+            caneta.DashPattern = flinha;
         }
         // vermelho escuro
         private void button11_Click(object sender, EventArgs e)
         {
             cor = setCor(139, 0, 0);
+            corLinha = "139 0 0";
             caneta = setPen(cor, espessura);
+            caneta.DashPattern = flinha;
         }
         //vermelho
         private void button12_Click(object sender, EventArgs e)
         {
             cor = setCor(255, 0, 0);
+            corLinha = "255 0 0";
             caneta = setPen(cor, espessura);
+            caneta.DashPattern = flinha;
         }
         //laranja
         private void button13_Click(object sender, EventArgs e)
         {
             cor = setCor(255, 165, 0);
+            corLinha = "255 165 0";
             caneta = setPen(cor, espessura);
+            caneta.DashPattern = flinha;
         }
         //amarelo
         private void button14_Click(object sender, EventArgs e)
         {
             cor = setCor(255, 255, 0);
+            corLinha = "255 255 0";
             caneta = setPen(cor, espessura);
+            caneta.DashPattern = flinha;
         }
         //verde escuro
         private void button15_Click(object sender, EventArgs e)
         {
             cor = setCor(0, 100, 0);
+            corLinha = "0 100 0";
             caneta = setPen(cor, espessura);
+            caneta.DashPattern = flinha;
         }
         //branco
         private void button8_Click(object sender, EventArgs e)
         {
             cor = setCor(255, 255, 255);
+            corLinha = "255 255 255";
             caneta = setPen(cor, espessura);
+            caneta.DashPattern = flinha;
         }
         //cinza escuro
         private void button10_Click(object sender, EventArgs e)
         {
             cor = setCor(128, 128, 128);
+            corLinha = "128 128 128";
             caneta = setPen(cor, espessura);
+            caneta.DashPattern = flinha;
         }
         //marrom
         private void button19_Click(object sender, EventArgs e)
         {
             cor = setCor(165, 42, 42);
+            corLinha = "165 42 42";
             caneta = setPen(cor, espessura);
+            caneta.DashPattern = flinha;
         }
         //rosa
         private void button20_Click(object sender, EventArgs e)
         {
             cor = setCor(255, 192, 203);
+            corLinha = "255 192 203";
             caneta = setPen(cor, espessura);
+            caneta.DashPattern = flinha;
         }
         //dourado
         private void button21_Click(object sender, EventArgs e)
         {
             cor = setCor(207, 181, 59);
+            corLinha = "207 181 59";
             caneta = setPen(cor, espessura);
+            caneta.DashPattern = flinha;
         }
         //amarelo claro
         private void button22_Click(object sender, EventArgs e)
         {
             cor = setCor(255, 255, 224);
+            corLinha = "255 255 224";
             caneta = setPen(cor, espessura);
+            caneta.DashPattern = flinha;
         }
         //verde lima
         private void button23_Click(object sender, EventArgs e)
         {
             cor = setCor(50, 205, 50);
+            corLinha = "50 205 50";
             caneta = setPen(cor, espessura);
+            caneta.DashPattern = flinha;
         }
         //turquoise
         private void button24_Click(object sender, EventArgs e)
         {
             cor = setCor(64, 224, 208);
+            corLinha = "64 224 208";
             caneta = setPen(cor, espessura);
+            caneta.DashPattern = flinha;
         }
         //slate gray
         private void button25_Click(object sender, EventArgs e)
         {
             cor = setCor(112, 128, 144);
+            corLinha = "112 128 144";
             caneta = setPen(cor, espessura);
+            caneta.DashPattern = flinha;
         }
         //Thistle
         private void button26_Click(object sender, EventArgs e)
         {
             cor = setCor(216, 191, 216);
+            corLinha = "216 191 216";
             caneta = setPen(cor, espessura);
+            caneta.DashPattern = flinha;
         }
         //azul
         private void button16_Click(object sender, EventArgs e)
         {
             cor = setCor(0, 0, 255);
+            corLinha = "0 0 255";
             caneta = setPen(cor, espessura);
+            caneta.DashPattern = flinha;
         }
         //azul escuro
         private void button17_Click(object sender, EventArgs e)
         {
             cor = setCor(0, 0, 139);
+            corLinha = "0 0 139";
             caneta = setPen(cor, espessura);
+            caneta.DashPattern = flinha;
         }
         //roxo
         private void button18_Click(object sender, EventArgs e)
         {
             cor = setCor(153, 51, 153);
+            corLinha = "153 51 153";
             caneta = setPen(cor, espessura);
+            caneta.DashPattern = flinha;
         }
         //========================================================
-        //combo box tipos de linha
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        public void estiloLinhaForma(String valorTipo)
         {
-            
-            int valorCombo = int.Parse(comboBox2.SelectedItem.ToString());
-            switch (valorCombo)
+            switch (int.Parse(valorTipo))
             {
                 case 1:
-                    flinha = new float[1] { 1};
+                    flinha = new float[1] { 1 };
+                    tipoFLinha = "1";
                     break;
                 case 2:
                     flinha = new float[2] { 5, 2 };
+                    tipoFLinha = "2";
                     break;
                 case 3:
                     flinha = new float[2] { 1, 2 };
+                    tipoFLinha = "3";
                     break;
                 case 4:
                     flinha = new float[4] { 5, 2, 1, 2 };
+                    tipoFLinha = "4";
                     break;
                 case 5:
                     flinha = new float[6] { 5, 2, 1, 2, 1, 2 };
+                    tipoFLinha = "5";
                     break;
             }
             caneta.DashPattern = flinha;
+        }
+        //combo box tipos de linha
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int valorCombo = int.Parse(comboBox2.SelectedItem.ToString());
+            estiloLinhaForma(valorCombo.ToString());
         }
         //combo box espessura
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -396,42 +448,94 @@ namespace Projeto2bi_3ano
         }
 
         //==========================
+        public void desenharFormas(PaintEventArgs e)
+        {
+            switch (tipoForma)
+            {
+                case 1:
+                    PrintLinha(e, coordenadasAtuais[0], coordenadasAtuais[1], coordenadasAtuais[2], coordenadasAtuais[3], caneta);
+                    break;
+                case 2:
+                    PrintElipse(e, coordenadasAtuais, caneta);
+                    break;
+                case 3:
+                    PrintElipse(e, coordenadasAtuais, caneta);
+                    break;
+                case 4:
+                    PrintRetangulo(e, coordenadasAtuais, caneta);
+                    break;
+                case 5:
+                    PrintTriangulo(e, coordenadasAtuais, caneta);
+                    break;
+                case 6:
+                    PrintLosango(e, coordenadasAtuais, caneta);
+                    break;
+                case 7:
+                    PrintPentagono(e, coordenadasAtuais, caneta);
+                    break;
+            }
+        }
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
 
 
             if(tipoForma != 0 && pintar)
             {
-                switch (tipoForma){
-                    case 1:
-                        PrintLinha(e, coordenadasAtuais[0], coordenadasAtuais[1], coordenadasAtuais[2], coordenadasAtuais[3], caneta);
-                        break;
-                    case 2:
-                        PrintElipse(e, coordenadasAtuais, caneta);
-                        break;
-                    case 3:
-                        PrintElipse(e, coordenadasAtuais, caneta);
-                        break;
-                    case 4:
-                        PrintRetangulo(e, coordenadasAtuais, caneta);
-                        break;
-                    case 5:
-                        PrintTriangulo(e, coordenadasAtuais, caneta);
-                        break;
-                    case 6:
-                        PrintLosango(e, coordenadasAtuais, caneta);
-                        break;
-                    case 7:
-                        PrintPentagono(e, coordenadasAtuais, caneta);
-                        break;
-                }
-                //SaveArquivo();
+                desenharFormas(e);
+                SaveArquivo();
                 pintar = false;
                 segundoClique = false;
                 ContcoordenadasC = 0;
                 pontosClicados = 0;
+                GerarFormas(e);
+            }
+            else if (desenhosIniciais)
+            {
+                GerarFormas(e);
+                desenhosIniciais = false;
             }
 
+        }
+        public void GerarFormas(PaintEventArgs e)
+        {
+            //cor espessura, tipolinha tipoForma, coordenadas (raio/larg e alt)
+            //D:\codigo_visual_studio\AULAS------WAGNER\TESTES\ARQUIVOS
+            //C:\Users\aluno\Documents\texto.txt
+            string[] ler = File.ReadAllLines(@"D:\codigo_visual_studio\AULAS------WAGNER\TESTES\ARQUIVOS\texto.txt");
+            foreach (string x in ler)
+            {
+                //textBox4.AppendText(x + Environment.NewLine);
+                String[] desenhos = x.Split(' ');
+
+                //textBox4.AppendText(desenhos[0]+" "+ desenhos[1] + " " + desenhos[2] + " " + desenhos[3] + " " + desenhos[4] + " " + desenhos[5] + " " + desenhos[6] + Environment.NewLine
+
+                cor = setCor(int.Parse(desenhos[0]), int.Parse(desenhos[1]), int.Parse(desenhos[2]));
+                caneta = setPen(cor, int.Parse(desenhos[3]));
+                //desenho[4] dashpattern!!!
+                estiloLinhaForma(desenhos[4]);
+
+                tipoForma = int.Parse(desenhos[5]);
+                if (tipoForma == 2)
+                {
+                    raio = int.Parse(desenhos[8]);
+                    textBox1.Text = raio.ToString();
+                }
+                else if (tipoForma == 3)
+                {
+                    larg = int.Parse(desenhos[8]);
+                    alt = int.Parse(desenhos[9]);
+                    textBox2.Text = alt.ToString();
+                    textBox3.Text = larg.ToString();
+                }
+
+                for (int i = 0; i <= GetTipo() * 2 - 1; i++)
+                {
+                    coordenadasAtuais[i] = int.Parse(desenhos[i + 6]);
+                    //textBox4.AppendText(coordenadasAtuais[i] + Environment.NewLine);
+                }
+
+                desenharFormas(e);
+            }
         }
     }
 }
