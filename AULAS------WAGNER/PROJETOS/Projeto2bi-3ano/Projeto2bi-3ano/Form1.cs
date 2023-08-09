@@ -1,4 +1,15 @@
-﻿using System;
+﻿/* Colegio Técnico Antônio Teixeira Fernandes (Univap)
+ * Curso Técnico em Informática - Data de Entrega: 24/05/2023
+ * Autores do Projeto: Enzo Dante Micoli
+ *                     Davi Baruel Lara
+ *   
+ * Turma: 3H
+ * Atividade Proposta em aula
+ * Observação: <colocar se houver>
+ * 
+ * 
+ * ******************************************************************/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -48,13 +59,13 @@ namespace Projeto2bi_3ano
             if(tipoForma == 2)
             {
                 raio = float.Parse(textBox1.Text);
-                e.Graphics.DrawEllipse(c, x[0], x[1], raio, raio);
+                e.Graphics.DrawEllipse(c, x[0]-(raio/2), x[1] - (raio / 2), raio, raio);
             }                
             else
             {
                 larg = float.Parse(textBox3.Text);
                 alt = float.Parse(textBox2.Text);
-                e.Graphics.DrawEllipse(c, x[0], x[1], larg, alt);
+                e.Graphics.DrawEllipse(c, x[0] - (larg/ 2), x[1] - (alt / 2), larg, alt);
             }
             
         }
@@ -93,10 +104,28 @@ namespace Projeto2bi_3ano
         }
         public void PrintPentagono(PaintEventArgs e, int[] pontos, Pen c)
         {
+            int[] p = new int[10];
+            p[0] = pontos[0] - 35;
+            p[1] = pontos[1] + 20;
+
+            p[2] = pontos[0] - 60;
+            p[3] = pontos[1] - 40;
+
+            p[4] = pontos[0];
+            p[5] = pontos[1] - 70;
+
+            p[6] = pontos[0] + 60;
+            p[7] = pontos[1] - 40;
+
+            p[8] = pontos[0] + 35;
+            p[9] = pontos[1] + 20;
+
+            
+
             int i1 = 0, i2 = 2;
             for (int i = 0; i <= 4; i++)
             {
-                PrintLinha(e, pontos[i1], pontos[i1 + 1], pontos[i2], pontos[i2 + 1], c);
+                PrintLinha(e, p[i1], p[i1 + 1], p[i2], p[i2 + 1], c);
                 i1 += 2;
                 i2 += 2;
                 if (i2 == 10)
@@ -104,11 +133,32 @@ namespace Projeto2bi_3ano
             }
         }
         public void PrintLosango(PaintEventArgs e, int[] pontos, Pen c)
-        {
+        {   
+            int[] p = new int[8];
+            /*for(int i = 0; i <= 3; i++)
+            {
+                if(i < 1)
+                {
+                    p[i] = pontos[i]-50;
+                    p[i+1] = pontos[i+1];
+                }
+            }*/
+            p[0] = pontos[0]-50;
+            p[1] = pontos[1];
+
+            p[2] = pontos[0];
+            p[3] = pontos[1] - 50;
+            
+            p[4] = pontos[0] + 50;
+            p[5] = pontos[1];
+
+            p[6] = pontos[0];
+            p[7] = pontos[1] + 50;
+
             int i1 = 0, i2 = 2;
             for (int i = 0; i <= 3; i++)
             {
-                PrintLinha(e, pontos[i1], pontos[i1 + 1], pontos[i2], pontos[i2 + 1], c);
+                PrintLinha(e, p[i1], p[i1 + 1], p[i2], p[i2 + 1], c);
                 i1 += 2;
                 i2 += 2;
                 if (i2 == 8)
@@ -137,10 +187,10 @@ namespace Projeto2bi_3ano
                     return 3;
                     break;
                 case 6:
-                    return 4;
+                    return 1; //4
                     break;
                 case 7:
-                    return 5;
+                    return 1; //5
                     break;
             }
             return 0;
