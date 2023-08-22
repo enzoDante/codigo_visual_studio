@@ -15,10 +15,11 @@ namespace Projeto3bi_3ano
         public Form1()
         {
             InitializeComponent();
-            teste();
+            //teste();
         }
 
-        public void teste()
+
+        public void teste(PaintEventArgs e)
         {
             Bitmap imagem = new Bitmap(@"D:\codigo_visual_studio\AULAS------WAGNER\PROJETOS\arquivos\panela.jpg");
             Color corRemover = Color.Yellow;
@@ -40,8 +41,10 @@ namespace Projeto3bi_3ano
                     }
                 }
             }
+            //aqqqqqqqqqqqq=============================================================
+            e.Graphics.DrawImage(resultado, /*myBitmap.Width*/200, 50, resultado.Width, resultado.Height);
 
-            resultado.Save(@"D:\codigo_visual_studio\AULAS------WAGNER\PROJETOS\arquivos\nova_imagem.png");
+            //resultado.Save(@"D:\codigo_visual_studio\AULAS------WAGNER\PROJETOS\arquivos\nova_imagem.png");
         }
         static double ColorDistance(Color c1, Color c2)
         {
@@ -50,6 +53,23 @@ namespace Projeto3bi_3ano
             int bDiff = c1.B - c2.B;
 
             return Math.Sqrt(rDiff * rDiff + gDiff * gDiff + bDiff * bDiff);
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            testenovo(e);
+        }
+        public void testenovo(PaintEventArgs e)
+        {
+            Bitmap myBitmap2 = new Bitmap(@"D:\codigo_visual_studio\AULAS------WAGNER\PROJETOS\arquivos\imagem_A.jpg");
+            Bitmap myBitmap = new Bitmap(@"D:\codigo_visual_studio\AULAS------WAGNER\PROJETOS\arquivos\panela.jpg");
+            e.Graphics.DrawImage(myBitmap2, 0, 0, myBitmap2.Width, myBitmap2.Height);
+
+            //Color backColor = myBitmap.GetPixel(10, 10);
+
+            myBitmap.MakeTransparent();//backColor
+            //e.Graphics.DrawImage(myBitmap, /*myBitmap.Width*/200, 50, myBitmap.Width, myBitmap.Height);
+            teste(e);
         }
     }
 }
