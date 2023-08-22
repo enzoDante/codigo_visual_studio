@@ -18,8 +18,8 @@ namespace Projeto3bi_3ano
             //teste();
         }
 
-
-        public void teste(PaintEventArgs e)
+        //remover fundo
+        public Bitmap teste(PaintEventArgs e)
         {
             Bitmap imagem = new Bitmap(@"D:\codigo_visual_studio\AULAS------WAGNER\PROJETOS\arquivos\panela.jpg");
             Color corRemover = Color.Yellow;
@@ -42,7 +42,8 @@ namespace Projeto3bi_3ano
                 }
             }
             //aqqqqqqqqqqqq=============================================================
-            e.Graphics.DrawImage(resultado, /*myBitmap.Width*/200, 50, resultado.Width, resultado.Height);
+            return resultado;
+            //e.Graphics.DrawImage(resultado, /*myBitmap.Width*/200, 50, resultado.Width, resultado.Height);
 
             //resultado.Save(@"D:\codigo_visual_studio\AULAS------WAGNER\PROJETOS\arquivos\nova_imagem.png");
         }
@@ -55,9 +56,39 @@ namespace Projeto3bi_3ano
             return Math.Sqrt(rDiff * rDiff + gDiff * gDiff + bDiff * bDiff);
         }
 
+        //filtro cinza
+        public Bitmap filtrocinza(Bitmap imagem)
+        {
+            Bitmap grayScale = new Bitmap(imagem.Width, imagem.Height);
+            for (Int32 y = 0; y < grayScale.Height; y++)
+            {
+                for (Int32 x = 0; x < grayScale.Width; x++)
+                {
+                    Color c = imagem.GetPixel(x, y);
+                    Int32 gs = (Int32)(c.R * 0.3 + c.G * 0.59 + c.B * 0.11);
+                    int trasn = imagem.GetPixel(x, y).A;
+                    grayScale.SetPixel(x, y, Color.FromArgb(trasn, gs, gs, gs));
+                }
+            }
+            return grayScale;
+        }
+        public void cinzaFi(PaintEventArgs e)
+        {
+            Bitmap myBitmap2 = new Bitmap(@"D:\codigo_visual_studio\AULAS------WAGNER\PROJETOS\arquivos\imagem_A.jpg");
+            Bitmap myBitmap = new Bitmap(@"D:\codigo_visual_studio\AULAS------WAGNER\PROJETOS\arquivos\panela.jpg");
+            Bitmap myBitmap2New = filtrocinza(myBitmap2);
+            myBitmap = teste(e);
+            Bitmap myBitmapNew = filtrocinza(myBitmap);
+
+            e.Graphics.DrawImage(myBitmap2New, myBitmap2.Width + 10, 0, myBitmap2.Width, myBitmap2.Height);
+            e.Graphics.DrawImage(myBitmapNew, myBitmap2.Width+200, 50, myBitmap.Width, myBitmap.Height);
+        }
+                
+
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             testenovo(e);
+            cinzaFi(e);
         }
         public void testenovo(PaintEventArgs e)
         {
@@ -69,7 +100,10 @@ namespace Projeto3bi_3ano
 
             myBitmap.MakeTransparent();//backColor
             //e.Graphics.DrawImage(myBitmap, /*myBitmap.Width*/200, 50, myBitmap.Width, myBitmap.Height);
-            teste(e);
+            Bitmap resultado = teste(e);
+            e.Graphics.DrawImage(resultado, /*myBitmap.Width*/200, 50, resultado.Width, resultado.Height);
         }
+
+
     }
 }
