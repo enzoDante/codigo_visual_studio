@@ -43,8 +43,6 @@ namespace Projeto3bi_3ano
             }
             //aqqqqqqqqqqqq=============================================================
             return resultado;
-            //e.Graphics.DrawImage(resultado, /*myBitmap.Width*/200, 50, resultado.Width, resultado.Height);
-
             //resultado.Save(@"D:\codigo_visual_studio\AULAS------WAGNER\PROJETOS\arquivos\nova_imagem.png");
         }
         static double ColorDistance(Color c1, Color c2)
@@ -54,6 +52,31 @@ namespace Projeto3bi_3ano
             int bDiff = c1.B - c2.B;
 
             return Math.Sqrt(rDiff * rDiff + gDiff * gDiff + bDiff * bDiff);
+        }
+        //filtro binário
+        public Bitmap filtroBinario(Bitmap imgcinza)
+        {
+            Bitmap grayScale = new Bitmap(imgcinza.Width, imgcinza.Height);
+            for (int y = 0; y < grayScale.Height; y++)
+            {
+                for (int x = 0; x < grayScale.Width; x++)
+                {
+                    Color c = imgcinza.GetPixel(x, y);
+                    int gs = (int)(c.R * 0.3 + c.G * 0.59 + c.B * 0.11);
+                    Color binar;
+                    if(y < 5 && x < 5)
+                        MessageBox.Show(c.ToString());
+                    if (c == Color.Transparent)
+                        binar = Color.Transparent;
+                    else
+                        binar = gs >= 128 ? Color.White : Color.Black;
+                    grayScale.SetPixel(x, y, binar);
+                    //int trasn = imgcinza.GetPixel(x, y).A;
+                    //grayScale.SetPixel(x, y, Color.FromArgb(trasn, gs, gs, gs));
+
+                }
+            }
+            return grayScale;
         }
 
         //filtro cinza
@@ -81,7 +104,12 @@ namespace Projeto3bi_3ano
             Bitmap myBitmapNew = filtrocinza(myBitmap);
 
             e.Graphics.DrawImage(myBitmap2New, myBitmap2.Width + 10, 0, myBitmap2.Width, myBitmap2.Height);
-            e.Graphics.DrawImage(myBitmapNew, myBitmap2.Width+200, 50, myBitmap.Width, myBitmap.Height);
+            e.Graphics.DrawImage(myBitmapNew, myBitmap2.Width+145, -5, myBitmap.Width, myBitmap.Height);
+
+            Bitmap binarionew2 = filtroBinario(myBitmap2New);
+            Bitmap binarionew = filtroBinario(myBitmapNew);
+            e.Graphics.DrawImage(binarionew2, 10, binarionew2.Height+10, binarionew2.Width, binarionew2.Height);
+            e.Graphics.DrawImage(binarionew, 135, binarionew2.Height + 15, binarionew.Width, binarionew.Height);
         }
                 
 
@@ -101,7 +129,7 @@ namespace Projeto3bi_3ano
             myBitmap.MakeTransparent();//backColor
             //e.Graphics.DrawImage(myBitmap, /*myBitmap.Width*/200, 50, myBitmap.Width, myBitmap.Height);
             Bitmap resultado = teste(e);
-            e.Graphics.DrawImage(resultado, /*myBitmap.Width*/200, 50, resultado.Width, resultado.Height);
+            e.Graphics.DrawImage(resultado, /*myBitmap.Width*/135, -5, resultado.Width, resultado.Height);
         }
 
 
