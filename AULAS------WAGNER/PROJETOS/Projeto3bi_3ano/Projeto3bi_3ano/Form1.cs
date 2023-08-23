@@ -94,7 +94,6 @@ namespace Projeto3bi_3ano
                             cor = imagemSob.GetPixel(largura, altura);
                         else
                             cor = imagemFundo.GetPixel(x, y);
-                        //resultado.SetPixel(x, y, cor);
                         largura++;
                     }else
                         cor = imagemFundo.GetPixel(x, y);
