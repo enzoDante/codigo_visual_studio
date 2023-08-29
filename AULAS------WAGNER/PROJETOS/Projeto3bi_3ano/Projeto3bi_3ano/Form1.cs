@@ -17,8 +17,8 @@ namespace Projeto3bi_3ano
             InitializeComponent();
         }
 
-        //remover fundo
-        public Bitmap removerFundo(Bitmap imagem, Color corRemover)
+        //remover fundo ---- remover esta função!!!!
+        /*public Bitmap removerFundo(Bitmap imagem, Color corRemover)
         {
             Bitmap resultado = new Bitmap(imagem.Width, imagem.Height);
             
@@ -34,7 +34,7 @@ namespace Projeto3bi_3ano
                 }
             }
             return resultado;
-        }
+        }*/
         static double DistanciadasCores(Color c1, Color c2)
         {
             int rDiff = c1.R - c2.R;
@@ -71,8 +71,8 @@ namespace Projeto3bi_3ano
                 {
                     Color c = imagem.GetPixel(x, y);
                     int gs = (int)(c.R * 0.3 + c.G * 0.59 + c.B * 0.11);
-                    int trasn = imagem.GetPixel(x, y).A;
-                    imagemCinza.SetPixel(x, y, Color.FromArgb(trasn, gs, gs, gs));
+                    //int trasn = imagem.GetPixel(x, y).A;
+                    imagemCinza.SetPixel(x, y, Color.FromArgb(gs, gs, gs)); //trasn, gs, gs, gs
                 }
             }
             return imagemCinza;
@@ -89,8 +89,9 @@ namespace Projeto3bi_3ano
                 {
                     Color cor = new Color();
                     if (x > 135 && x <= imagemSob.Width + 135 && y < imagemSob.Height)
-                    {                        
-                        if (imagemSob.GetPixel(largura, altura).A != 0)
+                    {                             
+                        //if (imagemSob.GetPixel(largura, altura).A != 0)
+                        if(DistanciadasCores(imagemSob.GetPixel(largura, altura), Color.Yellow) > 150)  
                             cor = imagemSob.GetPixel(largura, altura);
                         else
                             cor = imagemFundo.GetPixel(x, y);
@@ -112,7 +113,7 @@ namespace Projeto3bi_3ano
         {
             Bitmap cozinha = new Bitmap(@"D:\codigo_visual_studio\AULAS------WAGNER\PROJETOS\arquivos\imagem_A.jpg");
             Bitmap panela = new Bitmap(@"D:\codigo_visual_studio\AULAS------WAGNER\PROJETOS\arquivos\panela.jpg");
-            panela = removerFundo(panela, Color.Yellow);            
+            //panela = removerFundo(panela, Color.Yellow);            
             Bitmap ImagemCompleta = JuntarImagem(cozinha, panela);
 
             DesenharImagem(e, 0, 0, ImagemCompleta);
