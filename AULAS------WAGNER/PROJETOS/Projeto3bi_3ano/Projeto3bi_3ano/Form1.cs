@@ -52,8 +52,8 @@ namespace Projeto3bi_3ano
                 for (int x = 0; x < imgBinaria.Width; x++)
                 {
                     Color c = imgcinza.GetPixel(x, y);
-                    int gs = (int)(c.R * 0.3 + c.G * 0.59 + c.B * 0.11);
-                    Color binar = gs >= 128 ? Color.White : Color.Black;
+                    //int gs = (int)(c.R * 0.3 + c.G * 0.59 + c.B * 0.11);
+                    Color binar = c.R >= 125 ? Color.White : Color.Black;//128
                     imgBinaria.SetPixel(x, y, binar);
 
                 }
