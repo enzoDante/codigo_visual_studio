@@ -109,6 +109,10 @@ namespace Projeto3bi_3ano
         {
             e.Graphics.DrawImage(imagem, x, y, imagem.Width, imagem.Height);
         }
+        public void SalvarImagem(Bitmap imagem, String caminho)
+        {
+            imagem.Save(caminho);
+        }
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             Bitmap cozinha = new Bitmap(@"D:\codigo_visual_studio\AULAS------WAGNER\PROJETOS\arquivos\imagem_A.jpg");
@@ -123,7 +127,10 @@ namespace Projeto3bi_3ano
 
             DesenharImagem(e, 650, 0, ImgCinza);
             DesenharImagem(e, 0, 350, ImgBinaria);
-            ImagemCompleta.Save(@"D:\codigo_visual_studio\AULAS------WAGNER\PROJETOS\arquivos\hmmm.jpg");
+            ImagemCompleta.Save(@"D:\codigo_visual_studio\AULAS------WAGNER\PROJETOS\arquivos\Cozinha_panela.jpg");
+            ImgCinza.Save(@"D:\codigo_visual_studio\AULAS------WAGNER\PROJETOS\arquivos\Cozinha_panelaCinza.jpg");
+            ImgBinaria.Save(@"D:\codigo_visual_studio\AULAS------WAGNER\PROJETOS\arquivos\Cozinha_panelaBinario.jpg");
+
         }
 
 
