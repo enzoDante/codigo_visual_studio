@@ -123,6 +123,7 @@ namespace Projeto3bi_3ano
 
             DesenharImagem(e, 650, 0, ImgCinza);
             DesenharImagem(e, 0, 350, ImgBinaria);
+            ImagemCompleta.Save(@"D:\codigo_visual_studio\AULAS------WAGNER\PROJETOS\arquivos\hmmm.jpg");
         }
 
 
