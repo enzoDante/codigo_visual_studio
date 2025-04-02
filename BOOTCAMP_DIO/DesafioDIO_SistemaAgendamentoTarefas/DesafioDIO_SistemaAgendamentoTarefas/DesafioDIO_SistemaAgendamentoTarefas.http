@@ -1,0 +1,6 @@
+@DesafioDIO_SistemaAgendamentoTarefas_HostAddress = http://localhost:5108
+
+GET {{DesafioDIO_SistemaAgendamentoTarefas_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
